@@ -21,32 +21,54 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
         Jump();
+        Fall();
+        Move();
     }
 
     bool IsGround()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        return Physics2D.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 
     void Move()
     {
         motion.x = Input.GetAxis("Horizontal");
+        motion.x *= 10;
 
-        rb.velocity = motion * 10;
+        rb.velocity = motion;
     }
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGround())
+        if (Input.GetKey(KeyCode.Space) && IsGround())
         {
-            motion.y = 100;
-            rb.velocity = motion * 10;
+            motion.y = 20;
+            rb.velocity = motion * Time.deltaTime;
+        }
+        else if (!Input.GetKey(KeyCode.Space))
+        {
+            if (motion.y > 0)
+            {
+                motion.y = 0;
+            }
+
+            rb.velocity = motion * Time.deltaTime;
+        }
+    }
+
+    private void Fall()
+    {
+        if (IsGround() && motion.y < 0)
+        {
+            motion.y = 0;
         }
         else
         {
-
+            motion.y -= 1f;
         }
+
+        rb.velocity = motion * Time.deltaTime;
     }
+
 }
