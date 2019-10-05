@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && IsGround())
         {
-            motion.y = 20;
+            motion.y = 15;
             rb.velocity = motion * Time.deltaTime;
         }
         else if (!Input.GetKey(KeyCode.Space))
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            motion.y -= 1f;
+            motion.y -= 0.5f;
         }
 
         rb.velocity = motion * Time.deltaTime;
