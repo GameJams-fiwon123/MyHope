@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{1d38a0d0-afa6-4d33-a402-23161e5d759a}">
+        <property name="assetPath">
+            <value>gameplay (morte).wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>4.5517233560090702</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{49f71732-f476-4082-9bf4-dda5f1973998}</destination>
+        </relationship>
+    </object>
+</objects>

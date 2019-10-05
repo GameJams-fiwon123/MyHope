@@ -6,13 +6,17 @@ public class Staff : MonoBehaviour
 {
     float hp = 100;
 
-    private void OnParticleTrigger()
-    {
-        hp -= 10;
 
-        if (hp <= 0)
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag == "Attack")
         {
-            Destroy(gameObject);
+            hp -= 10;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

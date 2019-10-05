@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{00770cc5-13d3-4496-9030-fd2c37678c7f}">
+        <property name="assetPath">
+            <value>gameplay (Tímpano 1).wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>13.655170068027211</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{49f71732-f476-4082-9bf4-dda5f1973998}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb = null;
     Collider2D collider = null;
     float distToGround = 0f;
+
+    int life = 3;
 
     Vector2 motion;
 
@@ -84,11 +87,21 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Monster")
         {
             Time.timeScale = 0.5f;
+
+            life--;
+
+            FindObjectOfType<StudioEventEmitter>().SetParameter("energia", life);
+
             Vector2 dir = collision.transform.position - transform.position;
             rb.AddForce(-dir.normalized * 10000);
             motion.y = 0;
             rb.velocity = motion;
             Invoke("ResetTimeScale", 0.3f);
+
+            if (life <= 0)
+            {
+                FindObjectOfType<LevelManager>().Invoke("ResetLevel", 3f);
+            }
         }
     }
 

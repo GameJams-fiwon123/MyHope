@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD/FMOD.fspro
+  sourceProjectPath: FMOD/jogo.fspro
   SourceBankPathUnformatted: FMOD/Build
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
     Value: 32
   Plugins: []
   MasterBanks:
-  - Master
+  - Desktop/Master Bank
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

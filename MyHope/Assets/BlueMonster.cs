@@ -19,6 +19,8 @@ public class BlueMonster : MonoBehaviour
     float idleTime = 0f;
     float moveTime = 0f;
 
+    float hp = 100f;
+
     bool isRight = true;
 
     // Start is called before the first frame update
@@ -124,5 +126,18 @@ public class BlueMonster : MonoBehaviour
         }
 
         rb.velocity = motion * Time.deltaTime;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag == "Attack")
+        {
+            hp -= 10;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
