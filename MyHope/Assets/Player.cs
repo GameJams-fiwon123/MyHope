@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     void Move()
     {
         motion.x = Input.GetAxis("Horizontal");
-        motion.x *= 10;
+        motion.x *= 5;
 
         rb.velocity = motion;
     }
