@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb = null;
-    Collider2D collider;
+    Collider2D collider = null;
     float distToGround = 0f;
 
     Vector2 motion;
@@ -28,7 +28,15 @@ public class Player : MonoBehaviour
 
     bool IsGround()
     {
-        return Physics2D.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        Vector3 refPosition = transform.position;
+        refPosition.x = transform.position.x + 0.51f;
+
+        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+
+        refPosition.x = transform.position.x - 0.51f;
+        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+
+        return hitRight || hitLeft;
     }
 
     void Move()
@@ -69,6 +77,24 @@ public class Player : MonoBehaviour
         }
 
         rb.velocity = motion * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            Time.timeScale = 0.5f;
+            Vector2 dir = collision.transform.position - transform.position;
+            rb.AddForce(-dir.normalized * 10000);
+            motion.y = 0;
+            rb.velocity = motion;
+            Invoke("ResetTimeScale", 0.3f);
+        }
+    }
+
+    private void ResetTimeScale()
+    {
+        Time.timeScale = 1f;
     }
 
 }
