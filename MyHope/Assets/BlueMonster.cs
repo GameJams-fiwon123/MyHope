@@ -19,6 +19,9 @@ public class BlueMonster : MonoBehaviour
     float idleTime = 0f;
     float moveTime = 0f;
 
+    float curTimeTeleport = 0f;
+    float teleportTime = 3f;
+
     float hp = 100f;
 
     bool isRight = true;
@@ -40,10 +43,20 @@ public class BlueMonster : MonoBehaviour
 
         if (player)
         {
+            curTimeTeleport = 0f;
+
             Move();
         }
         else
         {
+            curTimeTeleport += Time.deltaTime;
+
+            if (curTimeTeleport > teleportTime)
+            {
+                curTimeTeleport = 0f;
+                Teleport();
+            }
+
             if (curState == State.IDLE)
             {
                 // IDLE
@@ -74,6 +87,12 @@ public class BlueMonster : MonoBehaviour
                 // TODO
             }
         }
+    }
+
+    private void Teleport()
+    {
+        int index = Random.RandomRange(0, 2);
+        transform.position = FindObjectOfType<Player>().gameObject.transform.transform.GetChild(index).position;
     }
 
     bool IsGround()
