@@ -7,7 +7,10 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb = null;
     Collider2D collider = null;
+    SpriteRenderer sprRenderer;
     float distToGround = 0f;
+
+    Animator anim;
 
     //[HideInInspector]
     public int hp = 3;
@@ -29,6 +32,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         distToGround = collider.bounds.extents.y;
+        sprRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -55,13 +60,13 @@ public class Player : MonoBehaviour
         Vector3 refPosition = transform.position;
         refPosition.x = transform.position.x + 0.51f;
 
-        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.2f);
 
         refPosition.x = transform.position.x;
-        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.2f);
 
         refPosition.x = transform.position.x - 0.51f;
-        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.2f);
 
         return hitRight || hitCenter  || hitLeft;
     }
@@ -71,13 +76,14 @@ public class Player : MonoBehaviour
         Vector3 refPosition = transform.position;
         refPosition.x = transform.position.x + 0.51f;
 
-        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, Vector3.up, distToGround);
 
         refPosition.x = transform.position.x;
-        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, Vector3.up, distToGround);
+       
 
         refPosition.x = transform.position.x - 0.51f;
-        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, Vector3.up, distToGround);
 
         return hitRight || hitCenter || hitLeft;
     }
@@ -86,6 +92,21 @@ public class Player : MonoBehaviour
     {
         motion.x = Input.GetAxis("Horizontal");
         motion.x *= 5;
+
+        if (motion.x > 0)
+        {
+            sprRenderer.flipX = false;
+            anim.SetInteger("AxisX", 1);
+        }
+        else if (motion.x < 0)
+        {
+            sprRenderer.flipX = true;
+            anim.SetInteger("AxisX", -1);
+        }
+        else
+        {
+            anim.SetInteger("AxisX", 0);
+        }
 
         rb.velocity = motion;
     }
