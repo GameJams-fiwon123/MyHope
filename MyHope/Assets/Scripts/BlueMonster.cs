@@ -26,6 +26,8 @@ public class BlueMonster : MonoBehaviour
 
     bool isRight = true;
 
+    public GameObject staff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,7 @@ public class BlueMonster : MonoBehaviour
             if (curTimeTeleport > teleportTime)
             {
                 curTimeTeleport = 0f;
-                Teleport();
+                //Teleport();
             }
 
             if (curState == State.IDLE)
@@ -157,6 +159,10 @@ public class BlueMonster : MonoBehaviour
 
             if (hp <= 0)
             {
+                if (staff != null)
+                {
+                    staff.GetComponent<Staff>().MonsterDied();
+                }
                 Destroy(gameObject);
             }
         }

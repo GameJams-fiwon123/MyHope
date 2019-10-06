@@ -12,6 +12,9 @@ public class Staff : MonoBehaviour
     [SerializeField]
     GameObject prefabMonster;
 
+    int maxSpawn = 3;
+    int countSpawn = 0;
+
     private void Start()
     {
         if (positions.childCount > 0)
@@ -22,14 +25,23 @@ public class Staff : MonoBehaviour
 
     IEnumerator GenerateEnemies()
     {
-        while (true)
-        {
-            int index = Random.Range(0, positions.childCount);
+        while (true) {
+            if (countSpawn < 3)
+            {
+                int index = Random.Range(0, positions.childCount);
 
-           
-            Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity, FindObjectOfType<GameManager>().monsters);
-            yield return new WaitForSeconds(5);
+                countSpawn++;
+                GameObject g = Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity, FindObjectOfType<GameManager>().monsters);
+                g.GetComponent<BlueMonster>().staff = gameObject;
+
+                yield return new WaitForSeconds(5);
+            }
         }
+    }
+
+    public void MonsterDied()
+    {
+        countSpawn--;
     }
 
     private void OnParticleCollision(GameObject other)
