@@ -13,12 +13,12 @@ public class UpgradeManager : MonoBehaviour
             case types.HP:
                 FindObjectOfType<UI>().SetHp(FindObjectOfType<Player>().hp, true);
                 FindObjectOfType<Player>().hp += 1;
-                FindObjectOfType<DataManager>().hp += FindObjectOfType<Player>().hp;
+                FindObjectOfType<DataManager>().hp = FindObjectOfType<Player>().hp;
                 break;
             case types.Attack:
                 FindObjectOfType<UI>().SetAttack(FindObjectOfType<Player>().attack, true);
                 FindObjectOfType<Player>().attack += 1;
-                FindObjectOfType<DataManager>().attack += FindObjectOfType<Player>().attack;
+                FindObjectOfType<DataManager>().attack = FindObjectOfType<Player>().attack;
                 break;
             case types.AttackSpeed:
                 FindObjectOfType<UI>().SetAttackSpeed(FindObjectOfType<Player>().attackSpeed, true);
