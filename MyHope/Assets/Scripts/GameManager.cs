@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sttafs.GetChildCount() == 0 && monsters.GetChildCount() == 0)
+        if (sttafs.childCount == 0 && monsters.childCount == 0)
         {
             sttafs = null;
             monsters = null;
