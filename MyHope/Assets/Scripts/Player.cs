@@ -9,7 +9,9 @@ public class Player : MonoBehaviour
     Collider2D collider = null;
     float distToGround = 0f;
 
-    int life = 3;
+    public int life = 3;
+    public int attack = 0;
+    public int attackSpeed = 0;
 
     Vector2 motion;
 
@@ -36,10 +38,13 @@ public class Player : MonoBehaviour
 
         RaycastHit2D hitRight = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
 
+        refPosition.x = transform.position.x;
+        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+
         refPosition.x = transform.position.x - 0.51f;
         RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
 
-        return hitRight || hitLeft;
+        return hitRight || hitCenter  || hitLeft;
     }
 
     void Move()

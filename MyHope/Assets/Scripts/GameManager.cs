@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    Transform sttafs, monsters;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (sttafs.GetChildCount() == 0 && monsters.GetChildCount() == 0)
+        {
+            FindObjectOfType<LevelManager>().LoadNexLevel();
+        }
     }
 }

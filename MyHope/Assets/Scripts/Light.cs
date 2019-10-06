@@ -26,6 +26,13 @@ public class Light : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
                 transform.GetChild(2).rotation = rotation;
                 transform.localPosition = Vector2.Lerp(transform.localPosition, mousePosition, moveSpeed);
+
+
+                if (Input.GetMouseButton(0))
+                {
+                    if (!transform.GetChild(2).GetComponent<ParticleSystem>().isPlaying)
+                        transform.GetChild(2).GetComponent<ParticleSystem>().Play();
+                }
             }
         }
     }
@@ -35,7 +42,13 @@ public class Light : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            transform.SetParent(collision.transform);
+            print(transform.parent + "   " + collision.transform);
+            if (transform.parent != collision.transform)
+            {
+                FindObjectOfType<UI>().SetVisibleAtks(true);
+                FindObjectOfType<UI>().SetVisibleAtkSpeeds(true);
+                transform.SetParent(collision.transform);
+            }
         }
     }
 }

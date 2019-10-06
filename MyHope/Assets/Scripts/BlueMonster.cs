@@ -22,7 +22,7 @@ public class BlueMonster : MonoBehaviour
     float curTimeTeleport = 0f;
     float teleportTime = 3f;
 
-    float hp = 100f;
+    float hp = 3f;
 
     bool isRight = true;
 
@@ -151,7 +151,7 @@ public class BlueMonster : MonoBehaviour
     {
         if (other.tag == "Attack")
         {
-            hp -= 10;
+            hp--;
 
             if (hp <= 0)
             {

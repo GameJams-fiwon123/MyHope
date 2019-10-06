@@ -5,7 +5,22 @@ using UnityEngine;
 public class UI : MonoBehaviour
 {
 
+    public GameObject hps, atks, atkSpeeds;
 
+    public void SetVisibleHps(bool flag)
+    {
+        hps.SetActive(flag);
+    }
+
+    public void SetVisibleAtks(bool flag)
+    {
+        atks.SetActive(flag);
+    }
+
+    public void SetVisibleAtkSpeeds(bool flag)
+    {
+        atkSpeeds.SetActive(flag);
+    }
 
     public void SetLive(int index)
     {
