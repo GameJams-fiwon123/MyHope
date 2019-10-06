@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
+   //[HideInInspector]
     public int hp = 3;
+
+   //[HideInInspector]
     public int attack = 0;
+
+   //[HideInInspector]
     public int attackSpeed = 0;
 
+    public static DataManager instance;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (FindObjectsOfType<DataManager>().Length > 1)
         {
@@ -18,12 +25,7 @@ public class DataManager : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
+            instance = this;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

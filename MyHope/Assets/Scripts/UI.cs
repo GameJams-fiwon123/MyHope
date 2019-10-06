@@ -7,15 +7,20 @@ public class UI : MonoBehaviour
 
     public GameObject hps, atks, atkSpeeds;
 
-    private void Start()
+    public void Reset(int maxHp, int maxAttack, int maxAttackSpeed)
     {
-        if (FindObjectsOfType<UI>().Length > 1)
+        for (int i = 0; i < maxHp; i++)
         {
-            Destroy(gameObject);
+            SetHp(i, true);
         }
-        else
+
+        for (int i = 0; i < maxAttack; i++)
         {
-            DontDestroyOnLoad(gameObject);
+            SetAttack(i, true);
+        }
+        for (int i = 0; i < maxAttackSpeed; i++)
+        {
+            SetAttackSpeed(i, true);
         }
     }
 

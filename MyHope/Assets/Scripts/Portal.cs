@@ -12,6 +12,9 @@ public class Portal : MonoBehaviour
 
     private void LoadNextLevel()
     {
+        Destroy(FindObjectOfType<UI>().gameObject);
+        Destroy(FindObjectOfType<DataManager>().gameObject);
         FindObjectOfType<LevelManager>().LoadNexLevel();
     }
+
 }

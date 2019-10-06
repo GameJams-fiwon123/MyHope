@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  attack: 0
-  attackSpeed: 0
+  attack: 1
+  attackSpeed: 1

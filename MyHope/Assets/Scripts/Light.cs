@@ -7,6 +7,20 @@ public class Light : MonoBehaviour
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
 
+    private void Start()
+    {
+        if (transform.parent != null)
+        {
+            if (transform.parent.tag == "Player")
+            {
+                FindObjectOfType<UI>().SetVisibleAtks(true);
+                FindObjectOfType<UI>().SetVisibleAtkSpeeds(true);
+
+                SetAttackSpeed(DataManager.instance.attackSpeed);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -28,7 +42,7 @@ public class Light : MonoBehaviour
                 transform.localPosition = Vector2.Lerp(transform.localPosition, mousePosition, moveSpeed);
 
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && !transform.parent.GetComponent<Player>().isDead)
                 {
                     if (!transform.GetChild(2).GetComponent<ParticleSystem>().isPlaying)
                         transform.GetChild(2).GetComponent<ParticleSystem>().Play();
@@ -37,6 +51,10 @@ public class Light : MonoBehaviour
         }
     }
 
+    public void SetAttackSpeed(float value)
+    {
+        transform.GetChild(2).GetComponent<ParticleSystem>().emissionRate = 1 + value * 0.2f - 0.2f;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -9,13 +9,19 @@ public class Player : MonoBehaviour
     Collider2D collider = null;
     float distToGround = 0f;
 
+    //[HideInInspector]
     public int hp = 3;
+
+    //[HideInInspector]
     public int attack = 0;
+
+    //[HideInInspector]
     public int attackSpeed = 0;
 
     Vector2 motion;
 
-    bool isDead = false;
+    [HideInInspector]
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,10 +29,13 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         distToGround = collider.bounds.extents.y;
+    }
 
-        hp = FindObjectOfType<DataManager>().hp;
-        attack = FindObjectOfType<DataManager>().attack;
-        attackSpeed = FindObjectOfType<DataManager>().attackSpeed;
+    private void Start()
+    {
+        hp = DataManager.instance.hp;
+        attack = DataManager.instance.attack;
+        attackSpeed = DataManager.instance.attackSpeed;
     }
 
     // Update is called once per frame
@@ -122,8 +131,6 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0.5f;
 
                 hp--;
-
-                FindObjectOfType<DataManager>().hp = hp;
 
                 FindObjectOfType<StudioEventEmitter>().SetParameter("energia", hp);
 

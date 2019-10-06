@@ -22,7 +22,7 @@ public class BlueMonster : MonoBehaviour
     float curTimeTeleport = 0f;
     float teleportTime = 3f;
 
-    float hp = 3f;
+    float hp = 5f;
 
     bool isRight = true;
 
@@ -34,6 +34,8 @@ public class BlueMonster : MonoBehaviour
         distToGround = collider.bounds.extents.y;
         curState = State.IDLE;
         idleTime = Random.Range(0.5f, 1.5f);
+
+        
     }
 
     // Update is called once per frame
@@ -151,7 +153,7 @@ public class BlueMonster : MonoBehaviour
     {
         if (other.tag == "Attack")
         {
-            hp--;
+            hp -= FindObjectOfType<Player>().attack;
 
             if (hp <= 0)
             {
