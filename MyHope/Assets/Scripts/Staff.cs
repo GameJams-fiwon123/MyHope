@@ -26,7 +26,8 @@ public class Staff : MonoBehaviour
         {
             int index = Random.Range(0, positions.childCount);
 
-            Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity);
+           
+            Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity, FindObjectOfType<GameManager>().monsters);
             yield return new WaitForSeconds(5);
         }
     }

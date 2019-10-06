@@ -42,11 +42,12 @@ public class Light : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            print(transform.parent + "   " + collision.transform);
             if (transform.parent != collision.transform)
             {
                 FindObjectOfType<UI>().SetVisibleAtks(true);
                 FindObjectOfType<UI>().SetVisibleAtkSpeeds(true);
+                FindObjectOfType<Player>().attack = 1;
+                FindObjectOfType<Player>().attackSpeed = 1;
                 transform.SetParent(collision.transform);
             }
         }

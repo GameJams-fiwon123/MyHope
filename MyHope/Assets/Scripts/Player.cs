@@ -9,11 +9,13 @@ public class Player : MonoBehaviour
     Collider2D collider = null;
     float distToGround = 0f;
 
-    public int life = 3;
+    public int hp = 3;
     public int attack = 0;
     public int attackSpeed = 0;
 
     Vector2 motion;
+
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,14 +23,22 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         distToGround = collider.bounds.extents.y;
+
+        hp = FindObjectOfType<DataManager>().hp;
+        attack = FindObjectOfType<DataManager>().attack;
+        attackSpeed = FindObjectOfType<DataManager>().attackSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Jump();
         Fall();
-        Move();
+
+        if (!isDead)
+        {
+            Jump();
+            Move();
+        }
     }
 
     bool IsGround()
@@ -47,6 +57,22 @@ public class Player : MonoBehaviour
         return hitRight || hitCenter  || hitLeft;
     }
 
+    bool IsCeilling()
+    {
+        Vector3 refPosition = transform.position;
+        refPosition.x = transform.position.x + 0.51f;
+
+        RaycastHit2D hitRight = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+
+        refPosition.x = transform.position.x;
+        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+
+        refPosition.x = transform.position.x - 0.51f;
+        RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, Vector3.up, distToGround + 0.1f);
+
+        return hitRight || hitCenter || hitLeft;
+    }
+
     void Move()
     {
         motion.x = Input.GetAxis("Horizontal");
@@ -62,7 +88,7 @@ public class Player : MonoBehaviour
             motion.y = 15;
             rb.velocity = motion * Time.deltaTime;
         }
-        else if (!Input.GetKey(KeyCode.Space))
+        else if (!Input.GetKey(KeyCode.Space) || IsCeilling())
         {
             if (motion.y > 0)
             {
@@ -91,21 +117,29 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            Time.timeScale = 0.5f;
-
-            life--;
-
-            FindObjectOfType<StudioEventEmitter>().SetParameter("energia", life);
-
-            Vector2 dir = collision.transform.position - transform.position;
-            rb.AddForce(-dir.normalized * 10000);
-            motion.y = 0;
-            rb.velocity = motion;
-            Invoke("ResetTimeScale", 0.3f);
-
-            if (life <= 0)
+            if (!isDead)
             {
-                FindObjectOfType<LevelManager>().Invoke("ResetLevel", 3f);
+                Time.timeScale = 0.5f;
+
+                hp--;
+
+                FindObjectOfType<DataManager>().hp = hp;
+
+                FindObjectOfType<StudioEventEmitter>().SetParameter("energia", hp);
+
+                FindObjectOfType<UI>().SetHp(hp, false);
+
+                Vector2 dir = collision.transform.position - transform.position;
+                rb.AddForce(-dir.normalized * 10000);
+                motion.y = 0;
+                rb.velocity = motion;
+                Invoke("ResetTimeScale", 0.3f);
+
+                if (hp <= 0)
+                {
+                    isDead = true;
+                    FindObjectOfType<LevelManager>().Invoke("ResetLevel", 3f);
+                }
             }
         }
     }

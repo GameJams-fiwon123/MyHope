@@ -7,6 +7,18 @@ public class UI : MonoBehaviour
 
     public GameObject hps, atks, atkSpeeds;
 
+    private void Start()
+    {
+        if (FindObjectsOfType<UI>().Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public void SetVisibleHps(bool flag)
     {
         hps.SetActive(flag);
@@ -22,19 +34,19 @@ public class UI : MonoBehaviour
         atkSpeeds.SetActive(flag);
     }
 
-    public void SetLive(int index)
+    public void SetHp(int index, bool flag)
     {
-        transform.GetChild(index).gameObject.SetActive(true);
+        transform.GetChild(0).transform.GetChild(index).gameObject.SetActive(flag);
     }
 
-    public void SetAttack(int index)
+    public void SetAttack(int index, bool flag)
     {
-        transform.GetChild(index).gameObject.SetActive(true);
+        transform.GetChild(1).transform.GetChild(index).gameObject.SetActive(flag);
     }
 
-    public void SetAttackSpeed(int index)
+    public void SetAttackSpeed(int index, bool flag)
     {
-        transform.GetChild(index).gameObject.SetActive(true);
+        transform.GetChild(2).transform.GetChild(index).gameObject.SetActive(flag);
     }
 
 }
