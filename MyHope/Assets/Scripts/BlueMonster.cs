@@ -28,6 +28,9 @@ public class BlueMonster : MonoBehaviour
 
     public GameObject staff;
 
+    public Animator anim;
+    public SpriteRenderer sprRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,9 @@ public class BlueMonster : MonoBehaviour
         distToGround = collider.bounds.extents.y;
         curState = State.IDLE;
         idleTime = Random.Range(0.5f, 1.5f);
+
+        anim = GetComponent<Animator>();
+        sprRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -63,6 +69,7 @@ public class BlueMonster : MonoBehaviour
             {
                 // IDLE
                 curTime += Time.deltaTime;
+                anim.SetInteger("AxisX", 0);
                 if (curTime > idleTime)
                 {
                     curTime = 0f;
@@ -118,6 +125,16 @@ public class BlueMonster : MonoBehaviour
         if (player)
         {
             motion.x = player.transform.position.x - transform.position.x;
+            if (motion.x > 0)
+            {
+                sprRenderer.flipX = true;
+                anim.SetInteger("AxisX", 1);
+            }
+            else if(motion.x < 0)
+            {
+                sprRenderer.flipX = false;
+                anim.SetInteger("AxisX", -1);
+            }
 
             rb.velocity = motion;
         }
@@ -125,12 +142,18 @@ public class BlueMonster : MonoBehaviour
         {
             if (isRight)
             {
+                sprRenderer.flipX = true;
+                anim.SetInteger("AxisX", 1);
+
                 motion.x = 3;
 
                 rb.velocity = motion;
             }
             else
             {
+                sprRenderer.flipX = false;
+                anim.SetInteger("AxisX", -1);
+
                 motion.x = -3;
 
                 rb.velocity = motion;
