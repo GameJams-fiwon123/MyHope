@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     Animator anim;
 
     //[HideInInspector]
+    public int maxHp = 3;
     public int hp = 3;
 
     //[HideInInspector]
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        maxHp = DataManager.instance.hp;
         hp = DataManager.instance.hp;
         attack = DataManager.instance.attack;
         attackSpeed = DataManager.instance.attackSpeed;

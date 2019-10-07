@@ -12,6 +12,7 @@ public class UpgradeManager : MonoBehaviour
         {
             case types.HP:
                 FindObjectOfType<UI>().SetHp(FindObjectOfType<Player>().hp, true);
+                FindObjectOfType<Player>().maxHp += 1;
                 FindObjectOfType<Player>().hp += 1;
                 break;
             case types.Attack:

@@ -36,8 +36,6 @@ public class BlueMonster : MonoBehaviour
         distToGround = collider.bounds.extents.y;
         curState = State.IDLE;
         idleTime = Random.Range(0.5f, 1.5f);
-
-        
     }
 
     // Update is called once per frame
@@ -102,14 +100,17 @@ public class BlueMonster : MonoBehaviour
     bool IsGround()
     {
         Vector3 refPosition = transform.position;
-        refPosition.x = transform.position.x + 0.51f;
+        refPosition.x = transform.position.x + 1f;
 
         RaycastHit2D hitRight = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
 
-        refPosition.x = transform.position.x - 0.51f;
+        refPosition.x = transform.position.x;
+        RaycastHit2D hitCenter = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
+
+        refPosition.x = transform.position.x - 1f;
         RaycastHit2D hitLeft = Physics2D.Raycast(refPosition, -Vector3.up, distToGround + 0.1f);
 
-        return hitRight || hitLeft;
+        return hitRight || hitCenter || hitLeft;
     }
 
     void Move()
@@ -145,7 +146,7 @@ public class BlueMonster : MonoBehaviour
         }
         else
         {
-            motion.y -= 20f;
+            motion.y -= 0.5f;
         }
 
         rb.velocity = motion * Time.deltaTime;

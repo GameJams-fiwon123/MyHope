@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
     {
         if (staffs != null && monsters != null)
         {
-            if (staffs.childCount == 0 && monsters.childCount == 0)
+            if (staffs.childCount == 0)
             { 
-                FindObjectOfType<DataManager>().hp = FindObjectOfType<Player>().hp;
+                FindObjectOfType<DataManager>().hp = FindObjectOfType<Player>().maxHp;
                 FindObjectOfType<DataManager>().attack = FindObjectOfType<Player>().attack;
                 FindObjectOfType<DataManager>().attackSpeed = FindObjectOfType<Player>().attackSpeed;
                 FindObjectOfType<LevelManager>().LoadNexLevel();

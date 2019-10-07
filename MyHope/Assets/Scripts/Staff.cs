@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Staff : MonoBehaviour
 {
-    float hp = 100;
+    float hp = 6;
 
     [SerializeField]
     Transform positions;
@@ -15,27 +15,39 @@ public class Staff : MonoBehaviour
     int maxSpawn = 3;
     int countSpawn = 0;
 
+
+    Coroutine coroutine;
+
     private void Start()
     {
         if (positions.childCount > 0)
         {
-            StartCoroutine(GenerateEnemies());
+            coroutine = StartCoroutine(GenerateEnemies());
         }
     }
 
     IEnumerator GenerateEnemies()
     {
-        while (true) {
-            if (countSpawn < 3)
-            {
-                int index = Random.Range(0, positions.childCount);
+        while (countSpawn < maxSpawn)
+        {
+            int index = Random.Range(0, positions.childCount);
 
-                countSpawn++;
-                GameObject g = Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity, FindObjectOfType<GameManager>().monsters);
-                g.GetComponent<BlueMonster>().staff = gameObject;
+            countSpawn++;
+            GameObject g = Instantiate(prefabMonster, positions.GetChild(index).position, Quaternion.identity, FindObjectOfType<GameManager>().monsters);
+            g.GetComponent<BlueMonster>().staff = gameObject;
 
-                yield return new WaitForSeconds(5);
-            }
+            yield return new WaitForSeconds(5);
+        }
+
+        coroutine = null;
+    }
+
+    private void Update()
+    {
+        if (countSpawn < maxSpawn)
+        {
+            if (coroutine == null)
+                coroutine = StartCoroutine(GenerateEnemies());
         }
     }
 
@@ -48,7 +60,7 @@ public class Staff : MonoBehaviour
     {
         if (other.tag == "Attack")
         {
-            hp -= 10;
+            hp -= 6;
 
             if (hp <= 0)
             {
