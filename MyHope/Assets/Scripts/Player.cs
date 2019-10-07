@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     Vector2 motion;
 
+    float timeStep = 0f;
+    float timeWaitStep = 0.25f;
+
     [HideInInspector]
     public bool isDead = false;
 
@@ -95,18 +98,32 @@ public class Player : MonoBehaviour
         motion.x = Input.GetAxis("Horizontal");
         motion.x *= 5;
 
+        timeStep += Time.deltaTime;
+
         if (motion.x > 0)
         {
+            if (timeStep > timeWaitStep)
+            {
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Passos", transform.position);
+                timeStep = 0f;
+            }
             sprRenderer.flipX = false;
             anim.SetInteger("AxisX", 1);
         }
         else if (motion.x < 0)
         {
+            if (timeStep > timeWaitStep)
+            {
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Passos", transform.position);
+                timeStep = 0f;
+            }
+
             sprRenderer.flipX = true;
             anim.SetInteger("AxisX", -1);
         }
         else
         {
+            timeStep = timeWaitStep;
             anim.SetInteger("AxisX", 0);
         }
 
@@ -117,6 +134,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && IsGround())
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pulo", transform.position);
             motion.y = 15;
             rb.velocity = motion * Time.deltaTime;
         }
@@ -154,6 +172,8 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0.5f;
 
                 hp--;
+
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dano Personagem", transform.position);
 
                 FindObjectOfType<StudioEventEmitter>().SetParameter("energia", hp);
 

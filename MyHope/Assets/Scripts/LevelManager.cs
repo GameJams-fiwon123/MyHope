@@ -32,11 +32,13 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Botão", transform.position);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadCredits()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Botão", transform.position);
         SceneManager.LoadScene("Credits");
     }
 
@@ -47,6 +49,7 @@ public class LevelManager : MonoBehaviour
 
     public void ExitGame()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Botão", transform.position);
         Application.Quit();
     }
 

@@ -8,6 +8,7 @@ public class Upgrade : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Bolhas Upgrade", transform.position);
         transform.parent.GetComponent<UpgradeManager>().ChooseUpgrade(currentType);
     }
 }

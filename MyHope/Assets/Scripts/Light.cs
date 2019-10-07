@@ -45,7 +45,10 @@ public class Light : MonoBehaviour
                 if (Input.GetMouseButton(0) && !transform.parent.GetComponent<Player>().isDead)
                 {
                     if (!transform.GetChild(2).GetComponent<ParticleSystem>().isPlaying)
+                    {
+                        //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Golpe de luz", transform.position);
                         transform.GetChild(2).GetComponent<ParticleSystem>().Play();
+                    }
                 }
             }
         }
@@ -62,6 +65,7 @@ public class Light : MonoBehaviour
         {
             if (transform.parent != collision.transform)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Amigo Luz", transform.position);
                 FindObjectOfType<UI>().SetVisibleAtks(true);
                 FindObjectOfType<UI>().SetVisibleAtkSpeeds(true);
                 FindObjectOfType<Player>().attack = 1;

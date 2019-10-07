@@ -60,7 +60,8 @@ public class Staff : MonoBehaviour
     {
         if (other.tag == "Attack")
         {
-            hp -= 6;
+            hp -= FindObjectOfType<Player>().attack;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/acertar cajado", transform.position);
 
             if (hp <= 0)
             {

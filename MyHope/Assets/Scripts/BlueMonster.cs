@@ -181,6 +181,8 @@ public class BlueMonster : MonoBehaviour
         {
             hp -= FindObjectOfType<Player>().attack;
 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Monstro Acerto", transform.position);
+
             if (hp <= 0)
             {
                 if (staff != null)
