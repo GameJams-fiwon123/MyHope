@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 1630001012621848624, guid: 3368ac71ec6f18e4588348ce59d46c1c,
         type: 3}
       propertyPath: Event
-      value: event:/Caverna
+      value: "event:/M\xFAsicas e ambiente/Caverna"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3368ac71ec6f18e4588348ce59d46c1c, type: 3}
@@ -1961,7 +1961,7 @@ PrefabInstance:
     - target: {fileID: 5144696749544405768, guid: 0a7919937a316444cb6a791892bc68ed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46199977
+      value: 0.6680001
       objectReference: {fileID: 0}
     - target: {fileID: 5144696749544405768, guid: 0a7919937a316444cb6a791892bc68ed,
         type: 3}
@@ -2016,7 +2016,7 @@ PrefabInstance:
     - target: {fileID: 5144696750588570808, guid: 0a7919937a316444cb6a791892bc68ed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9380002
+      value: -2.054111
       objectReference: {fileID: 0}
     - target: {fileID: 5144696750588570791, guid: 0a7919937a316444cb6a791892bc68ed,
         type: 3}

@@ -3208,6 +3208,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1630001012621848624, guid: 3368ac71ec6f18e4588348ce59d46c1c,
+        type: 3}
+      propertyPath: Event
+      value: "event:/M\xFAsicas e ambiente/Batalha"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3368ac71ec6f18e4588348ce59d46c1c, type: 3}
 --- !u!1001 &1890900226525885322

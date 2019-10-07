@@ -5340,7 +5340,7 @@ PrefabInstance:
     - target: {fileID: 1630001012621848624, guid: 3368ac71ec6f18e4588348ce59d46c1c,
         type: 3}
       propertyPath: Event
-      value: event:/Batalha
+      value: "event:/M\xFAsicas e ambiente/Batalha"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3368ac71ec6f18e4588348ce59d46c1c, type: 3}

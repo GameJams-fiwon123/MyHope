@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{97c4849d-cdd0-4faf-973b-d82d7a45cb34}">
+        <property name="assetPath">
+            <value>monstro defende1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.51512471655328795</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{49f71732-f476-4082-9bf4-dda5f1973998}</destination>
+        </relationship>
+    </object>
+</objects>

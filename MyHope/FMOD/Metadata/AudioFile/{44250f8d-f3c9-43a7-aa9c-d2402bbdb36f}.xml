@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{44250f8d-f3c9-43a7-aa9c-d2402bbdb36f}">
+        <property name="assetPath">
+            <value>Cajado golpe 1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.34759637188208614</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{49f71732-f476-4082-9bf4-dda5f1973998}</destination>
+        </relationship>
+    </object>
+</objects>
