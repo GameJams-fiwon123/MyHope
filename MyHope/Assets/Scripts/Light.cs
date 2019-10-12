@@ -31,15 +31,17 @@ public class Light : MonoBehaviour
                 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 mousePosition = transform.parent.transform.InverseTransformPoint(mousePosition);
-                mousePosition.x = Mathf.Clamp(mousePosition.x, -1f, 1f);
-                mousePosition.y = Mathf.Clamp(mousePosition.y, -1, 1f);
+                mousePosition.z = 0;
+                Vector3 clampMouse = Vector3.zero;
+                clampMouse.x = Mathf.Clamp(mousePosition.x, -1.2f, 1.2f);
+                clampMouse.y = Mathf.Clamp(mousePosition.y, -1.2f, 1.2f);
 
-                Vector3 relativePos = transform.position - transform.parent.position;
+                Vector2 relativePos = mousePosition - transform.localPosition;
+                relativePos.y = -relativePos.y;
+                float angle = Vector2.SignedAngle(Vector2.right , relativePos.normalized);
 
-                // the second argument, upwards, defaults to Vector3.up
-                Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-                transform.GetChild(2).rotation = rotation;
-                transform.localPosition = Vector2.Lerp(transform.localPosition, mousePosition, moveSpeed);
+                transform.GetChild(2).eulerAngles = new Vector3(angle, 90f, 0);
+                transform.localPosition = Vector2.Lerp(transform.localPosition, clampMouse, moveSpeed);
 
 
                 if (Input.GetMouseButton(0) && !transform.parent.GetComponent<Player>().isDead)

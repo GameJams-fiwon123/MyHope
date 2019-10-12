@@ -136,6 +136,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 520
+--- !u!114 &-5754312079960221277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Bot\xE3o"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Bot\xE3o"
+  guid: 63c2a065ddb2da41868aa03a49ec158f
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 520
+--- !u!114 &-5460748657300593259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/acertar cajado
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/acertar cajado
+  guid: 0b53bf49f21bd94a83d79aa61c9c5a83
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 347
+--- !u!114 &-5386412057250634081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bolhas upgrade
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bolhas upgrade
+  guid: 3951a9984eea6f4ab2e241c103a1ac5c
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
 --- !u!114 &-4997588290799877908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +251,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2285
+--- !u!114 &-4632956145287261378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/Felipe Inoue/Desktop/MyHope/MyHope/FMOD/Build/Desktop/Desktop/Master
+    Bank.strings.bank
+  SubDir: Desktop
+  lastModified: 637064319336795316
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1412
+  Exists: 1
+--- !u!114 &-4556876542461890250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Golpe de luz
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Golpe de luz
+  guid: cd7a1cca32a7204384902861739162fd
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
 --- !u!114 &-4210151256116234844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +335,92 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 32000
+--- !u!114 &-3545132068915647471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas e ambiente/Floresta"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas e ambiente/Floresta"
+  guid: 71dcdde8a8d98d4284e95c5c57a09f03
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 28000
+--- !u!114 &-2201149106675056022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Spawn Cajado
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Spawn Cajado
+  guid: e6556eda6faccc48a57842475f8f5f36
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2285
+--- !u!114 &-1425406581394720064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Batalha/energia
+  m_EditorClassIdentifier: 
+  Name: energia
+  Min: 0
+  Max: 6
+  Default: 3
+  Exists: 1
+--- !u!114 &-696668047832569037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Dano Personagem
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Dano Personagem
+  guid: 3a1248dde1e1394b8a37a5ddc132cf8d
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
 --- !u!114 &-424455622872621779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,29 +457,29 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8475266846922844237}
-  - {fileID: 3211804080472996300}
+  - {fileID: -4632956145287261378}
+  - {fileID: 8032276173220420501}
   EditorEvents:
-  - {fileID: -6902906588456831279}
-  - {fileID: -4997588290799877908}
-  - {fileID: 3126810807760314727}
-  - {fileID: -7145331287138710519}
-  - {fileID: -6138066707399619215}
-  - {fileID: 3200621072672969718}
-  - {fileID: -424455622872621779}
-  - {fileID: -6936337700537014681}
-  - {fileID: -6636599877788604026}
-  - {fileID: 4727746648122682249}
-  - {fileID: 6546029245960687263}
-  - {fileID: 3401603214572291017}
-  - {fileID: -3572522786603785026}
-  - {fileID: -4908365965416513750}
+  - {fileID: -5460748657300593259}
+  - {fileID: 8720776375323634214}
+  - {fileID: -5386412057250634081}
+  - {fileID: -696668047832569037}
+  - {fileID: -5754312079960221277}
+  - {fileID: 6128665580427990263}
+  - {fileID: 4324270022014568586}
+  - {fileID: 7466287924874538008}
+  - {fileID: 5912297395591222773}
+  - {fileID: -4556876542461890250}
+  - {fileID: -2201149106675056022}
+  - {fileID: 3356583697205031021}
+  - {fileID: -3545132068915647471}
+  - {fileID: 6424392959109624077}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3211804080472996300}
+  - {fileID: 8032276173220420501}
   StringsBanks:
-  - {fileID: -8475266846922844237}
-  stringsBankWriteTime: 637060016010336278
+  - {fileID: -4632956145287261378}
+  stringsBankWriteTime: 637064319336795316
   cacheVersion: 3
 --- !u!114 &3126810807760314727
 MonoBehaviour:
@@ -350,6 +549,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2297920
   Exists: 1
+--- !u!114 &3356583697205031021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas e ambiente/Batalha"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas e ambiente/Batalha"
+  guid: 6a10385fda979043ab9043797b013b8d
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1425406581394720064}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 108311
 --- !u!114 &3401603214572291017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +589,29 @@ MonoBehaviour:
   guid: cd7a1cca32a7204384902861739162fd
   Banks:
   - {fileID: 3211804080472996300}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &4324270022014568586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pulo
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pulo
+  guid: 8671939275f5df4698200815a32cd04e
+  Banks:
+  - {fileID: 8032276173220420501}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -396,6 +642,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &5912297395591222773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/amigo Luz
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/amigo Luz
+  guid: cc9f4be60f443344aa171ca0ab6964a6
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &6128665580427990263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Defesa
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Defesa
+  guid: 7a567699a590dd478b20e7c273d960d8
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 515
+--- !u!114 &6424392959109624077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsicas e ambiente/Caverna"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsicas e ambiente/Caverna"
+  guid: cefe75c4c2ad4c478d25eed81dfd23e7
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32000
 --- !u!114 &6546029245960687263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,3 +734,70 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &7466287924874538008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Monstro Acerto
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Monstro Acerto
+  guid: 9876c2f30e137547b5c7c9a6e70c04b4
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &8032276173220420501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/Felipe Inoue/Desktop/MyHope/MyHope/FMOD/Build/Desktop/Desktop/Master
+    Bank.bank
+  SubDir: Desktop
+  lastModified: 637064319336795316
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2297920
+  Exists: 1
+--- !u!114 &8720776375323634214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Passos
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Passos
+  guid: 34229005853c734f9b7bcc611bf94042
+  Banks:
+  - {fileID: 8032276173220420501}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 116
