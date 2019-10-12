@@ -3740,12 +3740,12 @@ PrefabInstance:
     - target: {fileID: 3869741101181203122, guid: 15be4a1c6a61a9e488f4e5af9eb6b894,
         type: 3}
       propertyPath: TriggerModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3869741101181203122, guid: 15be4a1c6a61a9e488f4e5af9eb6b894,
         type: 3}
       propertyPath: CollisionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3869741101181203122, guid: 15be4a1c6a61a9e488f4e5af9eb6b894,
         type: 3}
