@@ -61,7 +61,9 @@ public class Staff : MonoBehaviour
         if (other.tag == "Attack")
         {
             hp -= FindObjectOfType<Player>().attack;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/acertar cajado", transform.position);
+            FMOD.Studio.EventInstance soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/acertar cajado");
+            soundInstance.setVolume(0.4f);
+            soundInstance.start();
 
             if (hp <= 0)
             {

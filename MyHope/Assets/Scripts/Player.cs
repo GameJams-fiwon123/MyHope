@@ -134,7 +134,10 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && IsGround())
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pulo", transform.position);
+            FMOD.Studio.EventInstance soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Pulo");
+            soundInstance.setVolume(0.5f);
+            soundInstance.start();
+
             motion.y = 15;
             rb.velocity = motion * Time.deltaTime;
         }

@@ -181,7 +181,10 @@ public class BlueMonster : MonoBehaviour
         {
             hp -= FindObjectOfType<Player>().attack;
 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Monstro Acerto", transform.position);
+            FMOD.Studio.EventInstance soundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Monstro Acerto");
+            soundInstance.setVolume(0.4f);
+            soundInstance.start();
+
 
             if (hp <= 0)
             {
