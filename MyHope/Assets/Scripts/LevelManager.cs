@@ -49,10 +49,8 @@ public class LevelManager : MonoBehaviour
 
     public void ExitGame()
     {
-        #if UNITY_WEBGL
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Botão", transform.position);
-                Application.Quit();
-        #endif
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Botão", transform.position);
+        Application.Quit();
     }
 
     public void ResetLevel()
